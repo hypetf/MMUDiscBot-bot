@@ -1,6 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { EndBehaviorType, createAudioResource } = require('@discordjs/voice')
-const { createWriteStream } = require('node:fs');
 const { convertAudio } = require('../utils/audioConverter');
 const { createTranscription } = require('../utils/speechToText');
 
@@ -27,7 +26,7 @@ module.exports = {
                 end: EndBehaviorType.AfterSilence
             });
             
-            const audioFileName = `../audios/rec-${interaction.member.id}_${Math.floor(+Date.now()/1000)}.wav`;
+            const audioFileName = `./audios/rec-${interaction.member.id}_${Math.floor(+Date.now()/1000)}.wav`;
 
             await convertAudio(stream, audioFileName)
             .then(async() => {
