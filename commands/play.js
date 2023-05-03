@@ -20,19 +20,19 @@ module.exports = {
         await interaction.deferReply();
 
         try {
-            if(query.includes('test')) {
-                console.log('test')
-                const filePath = 'C:/Users/Rabba/Documents/GitHub/mmu_musicbot/botv2/song.mp3';
+            // if(query.includes('test')) {
+            //     console.log('test')
+            //     const filePath = 'C:/Users/Rabba/Documents/GitHub/mmu_musicbot/botv2/song.mp3';
 
-                await client.player.play(channel, filePath, {
-                    searchEngine: QueryType.FILE
-                });
+            //     await client.player.play(channel, filePath, {
+            //         searchEngine: QueryType.FILE
+            //     });
                 
-                embed
-                    .setColor('Blurple')
-                    .setDescription(`Playing local audio file`)
-                return interaction.followUp({embeds: [embed]});
-            }
+            //     embed
+            //         .setColor('Blurple')
+            //         .setDescription(`Playing local audio file`)
+            //     return interaction.followUp({embeds: [embed]});
+            // }
             const { track } = await client.player.play(channel, query, {
                 nodeOptions: {
                     metadata: interaction
@@ -40,7 +40,6 @@ module.exports = {
             });
 
             if(query.includes('playlist')) {
-                console.log('playlist')
                 embed
                     .setColor('Blurple')
                     .setThumbnail(track.thumbnail)
@@ -52,7 +51,6 @@ module.exports = {
                     })
             }
             else {
-                console.log('normal')
                 embed
                     .setColor('Blue')
                     .setThumbnail(track.thumbnail)

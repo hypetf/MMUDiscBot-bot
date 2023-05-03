@@ -14,7 +14,6 @@ module.exports = {
         try {
             const queue = useQueue(interaction.guild.id);
             const currentSong = queue.currentTrack;
-            console.log(queue.currentTrack)
             if(queue.node.isPlaying) {
                 queue.node.pause();
                 embed
