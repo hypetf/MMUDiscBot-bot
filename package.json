@@ -19,7 +19,7 @@
     "fluent-ffmpeg": "^2.1.2",
     "fs-extra": "^11.1.1",
     "openai": "^3.2.1",
-    "ytdl-core": "^4.11.3"
+    "ytdl-core": "^4.11.4"
   },
   "devDependencies": {
     "dotenv": "^16.0.3",
