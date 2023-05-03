@@ -11,7 +11,7 @@ async function createTranscription(stream) {
           fs.createReadStream(stream),
             "whisper-1"
         );
-        await fs.unlink(stream);
+        await fs.unlink(stream); // comment to keep audio file
         return response.data.text;
     } catch (err) {
         console.error(err);
